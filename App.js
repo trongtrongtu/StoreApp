@@ -8,7 +8,6 @@ export default function App() {
       <CategoryListItem />
       <CategoryListItem />
       <CategoryListItem />
-      <CategoryListItem />
     </View>
   );
 }
