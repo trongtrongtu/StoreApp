@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import CategoryListItem from './componemts/CategoryListItem';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CategoryListItem />
-      <CategoryListItem />
-      <CategoryListItem />
+      <ScrollView style={styles.title} contentContainerStyle={{ backgroundColor: 'red' }}>
+        <CategoryListItem />
+        <CategoryListItem />
+        <CategoryListItem />
+        <CategoryListItem />
+        <CategoryListItem />
+        <CategoryListItem />
+      </ScrollView>
     </View>
   );
 }
@@ -21,4 +26,9 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     paddingRight: 16
   },
+  title: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor: 'black'
+  }
 });
