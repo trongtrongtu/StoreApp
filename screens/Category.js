@@ -64,8 +64,12 @@ export default class Category extends React.Component {
     return (
       <FlatList
         data={this.state.products}
+        contentContainerStyle={styles.container}
+        numColumns={2}
         renderItem={({ item }) =>
-          <ProductListItem product={item} />
+          <View style={styles.wrapper}>
+            <ProductListItem product={item} />
+          </View>
         }
         keyExtractor={(item) => `${item.id}`} />
     );
@@ -73,7 +77,15 @@ export default class Category extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    paddingLeft: 8,
+    paddingRight: 8,
+    paddingTop: 16
+  },
   container: {
-
+    flex: 1,
+    paddingLeft: 8,
+    paddingRight: 8
   }
 });
