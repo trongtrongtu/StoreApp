@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
 import CategoryListItem from '../componemts/CategoryListItem';
 
@@ -9,15 +10,22 @@ export default class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [
-        { id: 1, name: 'Máy tính Asus' },
-        { id: 2, name: 'Máy tính Apple' },
-        { id: 3, name: 'Máy tính Hp' },
-        { id: 4, name: 'Máy tính Dell' },
-        { id: 5, name: 'Máy tính Lenovo' },
-        { id: 6, name: 'Máy tính Msi' }
-      ]
+      categories: []
     };
+
+    this.componentDidMount() {
+      axios.get('http://localhost:3000/categories')
+        .then(res => {
+          this.setState({
+            categories: res.data
+          })
+        })
+        .catch(error => {
+          console.error(error);
+          
+        })
+    }
+
   }
   render() {
     const { navigation } = this.props;
@@ -29,7 +37,7 @@ export default class Categories extends React.Component {
           renderItem={({ item }) =>
             <CategoryListItem
               category={item}
-              onPress={()=> navigation.navigate('Category',{
+              onPress={() => navigation.navigate('Category', {
                 categoryName: item.name
               })} />
           }
