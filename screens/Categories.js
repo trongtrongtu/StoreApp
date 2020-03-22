@@ -12,21 +12,21 @@ export default class Categories extends React.Component {
     this.state = {
       categories: []
     };
-
-    this.componentDidMount() {
-      axios.get('http://localhost:3000/categories')
-        .then(res => {
-          this.setState({
-            categories: res.data
-          })
-        })
-        .catch(error => {
-          console.error(error);
-          
-        })
-    }
-
   }
+
+  componentDidMount() {
+    axios.get('https://c9127b20.ngrok.io/categories')
+      .then(res => {
+        this.setState({
+          categories: res.data
+        })
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
+
   render() {
     const { navigation } = this.props;
     const { categories } = this.state;
