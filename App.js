@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import AppNavigator from './AppNavigator';
 
-axios.defaults.baseURL = 'https://835c22fa.ngrok.io';
+axios.defaults.baseURL = 'https://76013ba0.ngrok.io/';
 
 const AppContainer = createAppContainer(AppNavigator);
 

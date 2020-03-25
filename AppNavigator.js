@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import Category from './screens/Category';
 import Categories from './screens/Categories';

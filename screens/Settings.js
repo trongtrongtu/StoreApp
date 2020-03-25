@@ -7,6 +7,6 @@ export default class SettingsSreen extends React.Component {
       };
 
       render() {
-        return <Text>Cart</Text>
+        return <Text>Setting</Text>
     }
 }

@@ -7,6 +7,6 @@ export default class OrdersSreen extends React.Component {
       };
 
       render() {
-        return <Text>Cart</Text>
+        return <Text>Order</Text>
     }
 }
